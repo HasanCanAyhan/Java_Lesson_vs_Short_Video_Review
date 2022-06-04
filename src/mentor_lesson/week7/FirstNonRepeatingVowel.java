@@ -40,3 +40,10 @@ public class FirstNonRepeatingVowel {
     }
 
 }
+/*
+Question 1: Given a string, write a method to find the first non-repeating vowel(a,e, i,o,u) in it and return its index. If it doesn't exist, return -1. Assume that all the characters of the String are lowercase.
+(Do not use String class functions other than charAt())
+
+Ex1: bbddeeaffgi
+output: 6
+ */

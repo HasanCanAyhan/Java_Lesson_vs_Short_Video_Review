@@ -13,6 +13,21 @@ public class NestedForLoops1 {
             System.out.println();
         }
 
+        System.out.println("------------------------------------------");
+
+        // Another Solution
+
+        // If we change  j<=i to j<6-i (“6-i” is number of rows)
+
+        for (int i = 1; i <= 5 ; i++) {
+
+            for (int j = 1; j <= 6-i ; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+
+        }
+
 
 
 

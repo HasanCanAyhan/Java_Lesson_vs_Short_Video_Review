@@ -34,5 +34,5 @@ public class PrintDaysOfFourWeeks {
 
 }
 /*
-Question-2: Print out the days of 4 weeks as a notebook
+Question-2: Print out the days of 4 weeks as a notebook  4 weeks 7 days
  */

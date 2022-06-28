@@ -13,7 +13,7 @@ public class CustomMethodsPractice2 { // 12 - 16
         System.out.println("---------------------------");
         System.out.println(atFirst(""));  //Question 15
         System.out.println("---------------------------");
-        System.out.println(isPalindrome("levele")); //Question 16
+        System.out.println(isPalindrome("level")); //Question 16
 
 
 
@@ -73,7 +73,7 @@ public class CustomMethodsPractice2 { // 12 - 16
 
     } // Question 15
 
-
+    /*
     public static  boolean isPalindrome(String str){
 
         String result = "";
@@ -92,7 +92,15 @@ public class CustomMethodsPractice2 { // 12 - 16
 
     } // Question 16 -String utility
 
+     */
 
+    //-------------------------
+
+    public static  boolean isPalindrome(String str){
+
+        return  StringUtility.reverse(str).equalsIgnoreCase(str);
+
+    } // Question 16 -String utility-Solution
 
 }
 /*

@@ -13,10 +13,10 @@ public class CustomMethodsPractice1 { // 6 - 11
         System.out.println("---------------------------------------");
         System.out.println(frontAgain("edit"));// Question 9
         System.out.println("---------------------------------------");
-        System.out.println(countHi(" hi hi")); // Question 10
+        System.out.println(countHi(" hihihihi")); // Question 10
         System.out.println("---------------------------------------");
-        System.out.println(catDog("catcatdog")); // Question 11
-        System.out.println("---------------------------------------");
+        System.out.println(catDog("catcatdogdog")); // Question 11
+
 
 
 
@@ -93,6 +93,7 @@ public class CustomMethodsPractice1 { // 6 - 11
 
     } // Question 9
 
+    /*
     public static int countHi(String str){
 
         int count = 0;
@@ -104,9 +105,21 @@ public class CustomMethodsPractice1 { // 6 - 11
 
         return count;
 
-    } // Question 10 - String utility
+    } // Question 10
+
+     */ // Q10
+
+    public static int countHi(String str){
+
+        return StringUtility.frequency(str,"hi");
+
+    } // Question 10- StringUtility-Solution
 
 
+
+    //-----------------------------------------------
+
+    /*
     public static boolean catDog(String str){
 
         int countCat = 0;
@@ -124,8 +137,22 @@ public class CustomMethodsPractice1 { // 6 - 11
 
 
         return countCat == countDog;
-    } // Question 11 - String utility
+    } // Question 11
 
+
+
+ */ // Q11
+
+    public static boolean catDog(String str) {
+
+        str = str.toLowerCase();
+
+        int count_cat = StringUtility.frequency(str,"cat");
+        int count_dog = StringUtility.frequency(str,"dog");
+
+        return count_cat == count_dog;
+
+    } // Question 11- StringUtility-Solution
 
 
 }

@@ -1,4 +1,4 @@
-package java_lab.lab09_classObject_encapsulation.scrumTask;
+package java_lab.lab10_classObject_encapsulation.scrumTask;
 
 import java.util.ArrayList;
 import java.util.Arrays;

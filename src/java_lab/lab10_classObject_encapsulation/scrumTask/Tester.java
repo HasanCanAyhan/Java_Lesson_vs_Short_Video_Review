@@ -1,9 +1,6 @@
-package java_lab.lab09_classObject_encapsulation.scrumTask;
+package java_lab.lab10_classObject_encapsulation.scrumTask;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class Developer {
+public class Tester {
 
     private String name;
     private int age;
@@ -11,7 +8,6 @@ public class Developer {
     private String id;
     private String jobTitle;
     private double hourlyRate;
-    private String programmingLanguage;
 
 
     public String getName(){
@@ -93,84 +89,60 @@ public class Developer {
     }
 
 
-    public String getProgrammingLanguage() {
-        return programmingLanguage;
-    }
-
-    public void setProgrammingLanguage(String programmingLanguage) {
-
-        ArrayList<String> programmingLanguages = new ArrayList<>();
-
-        programmingLanguages.addAll(Arrays.asList(
-                "Java", "JavaScript", "Python", "Ruby", "C#", "C++", "Swift"
-        ));
-
-        if (!programmingLanguages.contains(programmingLanguage)){
-            System.err.println("Invalid programming language: " + programmingLanguage);
-            System.exit(1);
-        }
-
-
-        this.programmingLanguage = programmingLanguage;
-    }
-
-
-    public Developer(String name, int age, char gender, String id, String jobTitle, double hourlyRate, String programmingLanguage) {
+    // Constructor
+    public Tester(String name, int age, char gender, String id, String jobTitle, double hourlyRate) {
         setName(name);
         setAge(age);
         setGender(gender);
         setId(id);// there is no condition, but if there would be new requirement in the future,because of that we should write set method
         setJobTitle(jobTitle);
         setHourlyRate(hourlyRate);
-        setProgrammingLanguage(programmingLanguage);
     }
+
 
     public double getSalary(){
         return hourlyRate * 40 * 52;
     }
 
+    public void testing(){
+        System.out.println(name + " is testing the application");
+    }
+
+
     public String toString() {
-        return "Developer{" +
+        return "Tester{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", gender=" + gender +
                 ", id='" + id + '\'' +
                 ", jobTitle='" + jobTitle + '\'' +
                 ", salary=" + getSalary() +
-                ", programmingLanguage='" + programmingLanguage + '\'' +
                 '}';
     }
 
 
-    public void coding(){
-        System.out.println(name + " is coding in " + programmingLanguage);
-        //                 getName() also okay
-    }
 
-
-    public void fixingBug(){
-        System.out.println(name + " is fixing bugs");
-    }
 
 
 }
 /*
- 2. create a class named Developer
-            Attributes:
-                name, age, gender, employeeID, jobTitle, hourlyRate , programmingLanguage
+Scrum Task:
+    1. create a class named Tester
+            Variables:
+                name, age, gender, employeeID, jobTitle, hourlyRate
 
             Encapsulate all the fields
-              Conditions for setting the fields:
-                  1. name can not be set to null/empty/blank
-                  2. age can not be less than 18
-                  3. gender can only be set to 'M' or 'F'
-                  5. jobTitle can not be set to null/empty/blank
-                  6. hourlyRate  can not be negative
-                  7. programmingLanguage must be one of those programming language:
-                          languages = {"Java", "JavaScript", "Python", "Ruby", "C#", "C++", "Swift"}
-            Method:
-              getSalary(): returns the annual salary
-              coding()
-              fixingBug()
-              toString()
+                Conditions for setting the fields:
+                    1. name can not be set to null/empty/blank
+                    2. age can not be less than 18
+                    3. gender can only be set to 'M' or 'F'
+                    5. jobTitle can not be set to null/empty/blank
+                    6. hourlyRate can not be negative
+
+            Add a constructor that can set all the fields when an object is created
+
+            Methods:
+                getSalary(): returns the annual salary
+                testing()
+                toString()
  */

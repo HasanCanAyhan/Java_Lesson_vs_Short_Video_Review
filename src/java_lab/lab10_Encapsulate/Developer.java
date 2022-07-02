@@ -1,4 +1,4 @@
-package java_lab.lab09_Encapsulate;
+package java_lab.lab10_Encapsulate;
 
 public class Developer {
 

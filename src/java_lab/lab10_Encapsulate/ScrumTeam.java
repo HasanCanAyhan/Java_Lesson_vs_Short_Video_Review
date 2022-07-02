@@ -1,4 +1,4 @@
-package java_lab.lab09_Encapsulate;
+package java_lab.lab10_Encapsulate;
 
 import java.util.ArrayList;
 import java.util.Arrays;

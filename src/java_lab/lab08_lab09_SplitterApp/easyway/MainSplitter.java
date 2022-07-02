@@ -1,4 +1,4 @@
-package java_lab.lab08_SplitterApp.easyway;
+package java_lab.lab08_lab09_SplitterApp.easyway;
 
 import java.util.ArrayList;
 import java.util.List;

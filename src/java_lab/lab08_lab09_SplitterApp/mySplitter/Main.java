@@ -1,7 +1,6 @@
-package java_lab.lab08_SplitterApp.mySplitter;
+package java_lab.lab08_lab09_SplitterApp.mySplitter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {

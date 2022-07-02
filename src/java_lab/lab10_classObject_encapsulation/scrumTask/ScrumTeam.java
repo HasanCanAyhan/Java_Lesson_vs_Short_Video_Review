@@ -62,6 +62,7 @@ public class ScrumTeam { // ScrumTeam HAS A Tester
     }
 
 
+    // TERMINATE
     private static void terminate(String arg,String err){
 
         if(arg == null || arg.trim().isEmpty()  ){

@@ -12,7 +12,7 @@ public class CustomMethodsVoid {
 
         System.out.println("---------------------------------------");
 
-        displayMessage(); // this method name is written under Main Method to run my code.
+        displayMessage(); // this method name is written under java_short_video.OOP_Polymorphism.patikaLesson.Main Method to run my code.
 
         System.out.println("Wooden Spoon");
 

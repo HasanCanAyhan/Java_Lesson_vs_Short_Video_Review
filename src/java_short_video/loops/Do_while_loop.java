@@ -27,7 +27,7 @@ public class Do_while_loop {
 
         System.out.println("------------------------------------");
 
-        while(i>5){ // false
+        while(i>5){ // false  int i = 0
             System.out.println("Hello"); // never will be executed
 
         }

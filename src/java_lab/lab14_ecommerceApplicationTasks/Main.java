@@ -343,11 +343,9 @@ public class Main {
 
         if (countInsideTheProductMap != null && product.getRemainingStock() > count+countInsideTheProductMap){
             cart.getProductMap().put(product, count+countInsideTheProductMap);
-            //product.setRemainingStock(product.getRemainingStock() - (count + countInsideTheProductMap)); --> wrong
             return true;
         }else if (product.getRemainingStock() >= count){
             cart.getProductMap().put(product,count);
-            //product.setRemainingStock(product.getRemainingStock() - (count)); -->> wrong
             return true;
         }
 

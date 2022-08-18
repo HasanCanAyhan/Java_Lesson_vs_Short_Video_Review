@@ -29,8 +29,7 @@ public class MixPaymentCheckoutServiceImpl implements CheckoutService{
 
             if (giftBalance > 0) {
                 giftCardBalance.setBalance(giftBalance);
-
-                //return true; buraya da yazilmasi gerekiyor bence?
+                return true;
             } else {
                 // 300 - 600 = -300
                 // 300 + 450 - 600 = 150

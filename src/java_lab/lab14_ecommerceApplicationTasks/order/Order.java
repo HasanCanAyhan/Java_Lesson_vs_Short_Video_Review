@@ -15,7 +15,7 @@ public class Order {
     private Double discountAmount;
     private UUID customerId;
     private String orderStatus;
-    private Set<Product> productList;// neden Set listesini sectik??
+    private Set<Product> productList;//  we created Set list because productMap.keySet return Set
 
     public Order(UUID id, LocalDateTime orderDate, Double cartTotalAmount, Double paidAmount, Double discountAmount, UUID customerId, String orderStatus, Set<Product> productList) {
         this.id = id;

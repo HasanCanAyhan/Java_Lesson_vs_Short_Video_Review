@@ -21,7 +21,6 @@ public class OrderServiceImpl implements OrderService{
         // after discount (amountBased Discount )350
 
         if (cart.getDiscountId() != null){
-            // neden bu kosulu koyduk, zaten main method da cartin discount bölümünü ekledik : cart.setDiscountId(discount.getId());
             try {
                 Discount discount = findDiscountById(cart.getDiscountId());
                 amountAfterDiscount = discount.calculateCartAmountAfterDiscountApplied(amountAfterDiscount);

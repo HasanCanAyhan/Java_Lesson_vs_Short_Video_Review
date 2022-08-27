@@ -19,7 +19,7 @@ public class Generics <T>{ // for non-static
 
     }
 
-    public   void printEach(List<T> list){
+    public void printEach(List<T> list){
         for (T each : list) {
             System.out.println(each);
         }

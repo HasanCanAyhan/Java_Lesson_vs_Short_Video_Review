@@ -93,4 +93,17 @@ public class FirstUniqueCharacter_Stream {
                 .findFirst().orElse(' ');
     }
 
+    private static char solutionWithStream4(String str){
+        Map<Character, Integer> frequencyMap = new LinkedHashMap<>();
+
+        str.chars().mapToObj(s -> (char)s)
+                .forEach(  ch ->  frequencyMap.put(ch, frequencyMap.getOrDefault(ch,0)+1));
+
+        return frequencyMap.keySet().stream()
+                .filter(ch -> frequencyMap.get(ch) == 1).findFirst().orElse(' ');
+
+
+    }
+
+
 }

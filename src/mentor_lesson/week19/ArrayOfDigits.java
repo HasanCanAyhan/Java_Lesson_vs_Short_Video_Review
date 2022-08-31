@@ -17,7 +17,14 @@ public class ArrayOfDigits {
         int[] arr = Arrays.stream(str.split("")).mapToInt(s -> Integer.parseInt(s)).toArray();
         System.out.println(Arrays.toString(arr));
 
+        System.out.println("------------------------------");
+
+        int[] digits = Integer.toString(num).chars().map(c -> c - '0').toArray();
+        System.out.println(Arrays.toString(digits));
+
 
     }
+
+
 
 }

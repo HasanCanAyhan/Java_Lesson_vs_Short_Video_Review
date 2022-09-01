@@ -21,6 +21,9 @@ public class FirstUniqueCharacter_Stream {
 
         System.out.println(solutionWithStream2(str));
 
+        System.out.println("-----------------------");
+
+        System.out.println(solutionWithStream3(str));
     }
 
     private static Character firstUniqueCharacter(String str){
@@ -86,6 +89,8 @@ public class FirstUniqueCharacter_Stream {
         Map<Character,Long> frequencyMap = str.chars()
                 .mapToObj(i -> (char)i)
                 .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()));
+
+        System.out.println("frequencyMap = " + frequencyMap);
         return frequencyMap.entrySet().stream()
                 .filter(ch -> ch.getValue() == 1)
                 //.map(ch -> ch.getKey())

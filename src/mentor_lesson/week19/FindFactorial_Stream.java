@@ -1,5 +1,7 @@
 package mentor_lesson.week19;
 
+import java.util.Collection;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class FindFactorial_Stream {

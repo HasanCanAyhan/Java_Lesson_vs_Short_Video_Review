@@ -29,6 +29,8 @@ public class StreamOnString {
                 .mapToObj(x -> (char) x)
                 .collect(Collectors.groupingBy(Objects::toString, Collectors.counting()));
 
+        System.out.println("collect = " + collect);
+
         collect.entrySet().stream()
                 .filter(entry -> entry.getValue() > 1)
                 .forEach( entry -> System.out.println(entry.getKey() + " : " + entry.getValue()));

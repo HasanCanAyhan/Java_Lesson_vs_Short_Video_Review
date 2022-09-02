@@ -30,8 +30,6 @@ public class FirstUniqueCharacter_Stream {
 
         Map<Character,Integer> map = new LinkedHashMap<>();
 
-
-        int count = 0;
         for (char eachCh : str.toCharArray()) {
 
             map.put(eachCh, map.getOrDefault(eachCh,0)+1);

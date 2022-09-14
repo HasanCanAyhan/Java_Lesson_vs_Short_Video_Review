@@ -15,31 +15,45 @@ public class TwoSum_TwoPointerStrategy {
         System.out.println(Arrays.toString(nums));
         //[3, 5, 11, 15, 16]
 
-        int pointer1 = 0;
-        int pointer2 = 1;
-
         int target = 8;
-
-        int[] arr = new int[2];
-        for (int i = 0; i < nums.length -1; i++) {
-
-            if (nums[pointer1] + nums[pointer2] == target){
-                arr = new int[]{pointer1,pointer2};
-                System.out.println(Arrays.toString(arr));
-                System.out.println(nums[pointer1] + " - " + nums[pointer2]);
-
-            }
-
-            pointer1++;
-            pointer2++;
-
-        }
-
-        System.out.println("----------------------");
 
         List<Integer> list = Arrays.stream(nums).flatMap(integer -> Arrays.stream(nums).filter(integer1 -> integer + integer1 == target)).collect(Collectors.toList());
         System.out.println("list = " + list);
+        System.out.println("----------------------------------------------------");
+
+        Integer[] arr = {-3,2,3,3,6,8,15};
+
+        System.out.println(Arrays.toString( twoSum(arr,8)  ));
+
+
 
     }
+    public static int[] twoSum(Integer[] nums, int target){
+        //[3, 5, 11, 15, 16]
+        int start = 0;
+        int end = nums.length -1;
+
+        int result[] = new int[2];
+
+        while(start < end){
+
+            int sum = nums[start] + nums[end];
+            if (sum == target){
+                result[0] = start ;
+                result[1] = end ;
+                System.out.println(nums[start] + " , " + nums[end]);
+                break;
+            } else if (sum < target) {
+                start++;
+            }else{
+                end--;
+            }
+
+        }
+
+        return result;
+
+    }
+
 
 }

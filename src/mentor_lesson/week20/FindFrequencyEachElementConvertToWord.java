@@ -16,7 +16,7 @@ public class FindFrequencyEachElementConvertToWord {
 
         System.out.println("map = " + map);
 
-        List<String> strList = Arrays.asList("one","two","three","four","five","six","seven","eight","nine","ten","more than ten times");
+        List<String> strList = Arrays.asList("one","two","three","four","five","six","seven","eight","nine","ten","more than ten");
 
         map.entrySet().stream().forEach(entry -> {
             System.out.println(entry.getKey() + " is " + strList.get(entry.getValue().intValue() -1 ) + " times");

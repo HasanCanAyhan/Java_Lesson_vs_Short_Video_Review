@@ -8,7 +8,7 @@ public class TwoSum_TwoPointerStrategy {
 
     public static void main(String[] args) {
 
-        Integer[] nums = {16,3,11,5,15};
+        Integer[] nums = {-3,2,3,3,6,8,15};  // 16,3,11,5,15
 
         Collections.sort(Arrays.asList(nums));
 
@@ -23,17 +23,21 @@ public class TwoSum_TwoPointerStrategy {
 
         Integer[] arr = {-3,2,3,3,6,8,15};
 
+        //Arrays.sort(arr);
+
         System.out.println(Arrays.toString( twoSum(arr,8)  ));
 
 
 
     }
     public static int[] twoSum(Integer[] nums, int target){
-        //[3, 5, 11, 15, 16]
+        //[-3,2,3,3,6,8,15]
         int start = 0;
         int end = nums.length -1;
 
         int result[] = new int[2];
+
+        //while (nums[start] + nums[end] !=  target)
 
         while(start < end){
 

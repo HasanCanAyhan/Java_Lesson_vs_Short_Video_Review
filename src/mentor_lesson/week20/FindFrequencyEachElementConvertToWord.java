@@ -12,6 +12,7 @@ public class FindFrequencyEachElementConvertToWord {
 
         int[] arr = {1, 2, 3, 4, 3, 2, 1, 3, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2};
 
+        //                                          boxed() returns Wrapper Class : int -->> Integer
         Map<Integer, Long> map = Arrays.stream(arr).mapToObj(i -> i).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         System.out.println("map = " + map);

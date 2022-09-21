@@ -1,11 +1,11 @@
 package mentor_lesson.week22;
 
-public class ListNode {
+public class Node {
 
     public int data;
-    public ListNode next; 
+    public Node next;
 
-    public ListNode(int data) {
+    public Node(int data) {
         this.data = data;
     }
 

@@ -13,11 +13,16 @@ public class MoveZerosToEnd {
         int pointer1 = 0;
         int pointer2 = 0;
 
-        for (int i = 0; i < 2 ; i++) {
+
+        if(arr[pointer1] != 0){
+            for (int i = 0; i < 2 ; i++) {
+                pointer2++;
+            }
+            pointer1++;
+        }else{
             pointer2++;
         }
 
-        pointer1++;
 
         while (pointer2 <= arr.length-1 ){
 

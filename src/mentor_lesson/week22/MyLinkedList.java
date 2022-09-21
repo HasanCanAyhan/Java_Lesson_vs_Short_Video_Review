@@ -4,13 +4,13 @@ import java.util.Objects;
 
 public class MyLinkedList {
 
-    ListNode head;
+    Node head;
 
-    private void removeDup(ListNode head) {
+    private void removeDup(Node head) {
 
-        ListNode current = head;
+        Node current = head;
 
-        while (Objects.nonNull(current) && Objects.nonNull(current.next)) {
+        while (current.next != null) {
            // System.out.println(current.data);
             if (current.data == current.next.data) {
                 current.next = current.next.next;
@@ -24,10 +24,25 @@ public class MyLinkedList {
 
     }
 
-    private void show(ListNode head) {
+    public static void deleteDuplicates(Node head) {
+        if (head == null || head.next == null) return;
+        Node slow = head;
+        Node fast = head.next;
+        while (fast != null) {
+            if (slow.data == fast.data) {
+                fast = fast.next;  //  1  1  1  2   2
+                slow.next = fast;  //               f
+            } else {                //          s
+                slow = fast;
+                fast = fast.next;
+            }
+        }
+    }
 
-        ListNode current = head;
-        while (Objects.nonNull(current)) {
+    private void show(Node head) {
+
+        Node current = head;
+        while (Objects.nonNull(current)) { // current != null
             System.out.print(current.data + " -> ");
             current = current.next;
         }
@@ -39,15 +54,15 @@ public class MyLinkedList {
     public static void main(String[] args) {
 
 
-        ListNode first = new ListNode(1);
-        ListNode second = new ListNode(1);
-        ListNode third = new ListNode(3);
-        ListNode forth = new ListNode(4);
-        ListNode fifth = new ListNode(4);
-        ListNode sixth = new ListNode(4);
-        ListNode seventh = new ListNode(5);
-        ListNode eight = new ListNode(6);
-        ListNode ninth = new ListNode(6);
+        Node first = new Node(1);
+        Node second = new Node(1);
+        Node third = new Node(3);
+        Node forth = new Node(4);
+        Node fifth = new Node(4);
+        Node sixth = new Node(4);
+        Node seventh = new Node(5);
+        Node eight = new Node(5);
+        Node ninth = new Node(6);
 
         
 
@@ -62,7 +77,11 @@ public class MyLinkedList {
         seventh.next = eight;
         eight.next = ninth;
 
+
+
         list.show(list.head);
+
+        //1 -> 1 -> 3 -> 4 ->
 
         System.out.println("--------------------------------");
 

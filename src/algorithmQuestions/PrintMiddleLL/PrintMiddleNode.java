@@ -11,13 +11,13 @@ public class PrintMiddleNode {
 
     public static void printMiddle(MySinglyLinkedList sll) {
 
-        //FOR ODD NUMBER
+        //FOR ODD NUMBER : if fast = tail
         // H                                       T
         // 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 ->null  output : 5
         //                     s
         //                                         f
 
-        //FOR EVEN NUMBER
+        //FOR EVEN NUMBER : if fast.next = tail
         // H                                  T
         // 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 ->null  output : 4 - 5
         //                s

@@ -12,26 +12,27 @@ public class Solution {
     }
      static void reverse(MySinglyLinkedList list) {
 
-        // 1 -> 2 -> 3 -> 4 -> 5 -> null
-  // prev                      ^
-  // current                         ^
-  // nextN           ^
-
+         // 1 -> 2 -> 3 -> 4 -> 5 -> null
+   // prev                      ^
+   // current                         ^
+   // nextN                                ^
 
          Node prev = list.head;
          Node current = list.head.next;
 
+         while (current != null){
 
-         while(current != null){
-             Node nextNode =current.next;
-             current.next = prev; // change direction of current to prev
-             prev = current;// move prev to right to the current
-             current = nextNode; //
+             Node holdingThirdNode = current.next;
+             current.next = prev;
+             prev = current;
+             current = holdingThirdNode;
+
          }
-         // now adjust tail and head
-         list.tail = list.head;
-         list.tail.next = null;
-         list.head = prev;
 
-    }
+         list.tail = list.head;
+         list.head = prev;
+         list.tail.next = null;
+
+
+     }
 }

@@ -18,7 +18,6 @@ public class Solution {
 
         // 1 -> 3 -> 5 -> null
     //cr2            ^
-    //prev ^
 
         while(curr1 != null && curr2 != null){
 

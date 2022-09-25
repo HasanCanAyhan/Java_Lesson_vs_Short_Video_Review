@@ -1,4 +1,4 @@
-package mentor_lesson.week20;
+package mentor_lesson.week23;
 
 public class Contiguous_Subarray_TwoPointer {
 

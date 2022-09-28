@@ -12,8 +12,10 @@ public class Main {
         listNode.next = new ListNode(8);
         listNode.next.next = new ListNode(7);
         listNode.next.next.next = new ListNode(2);
-        listNode.next.next.next.next = listNode;
+        listNode.next.next.next.next = listNode.next.next;
 
+        // 4 8 7 2 ->> null
+        //   ^
 
         System.out.println(detectCycle(listNode).val);
 
@@ -28,23 +30,29 @@ public class Main {
 
         // 3->2->0->4
       // p ^
-     // c           ^
+     // c        ^
 
-        //prev = prev.next;
-        //current = current.next.next;
 
-        HashSet<ListNode> list = new HashSet<>(); // 3 2 0 4
+        HashSet<ListNode> setList = new HashSet<>(); // 3 2 0 4
 
         while (current.next != prev && current.next != null) {
 
-            if (!list.contains(current)) {
-                list.add(current);
+            if(!setList.add(current)){
+                return current;
+            }
+            /*
+            if (!setList.contains(current)) {
+                var n = setList.add(current);
             } else {
                 return current;
             }
 
+             */
+
             current = current.next;
         }
+
+
 
 
         if (current.next!= null && current.next.val == prev.val){
@@ -55,7 +63,6 @@ public class Main {
             System.out.println("null");
             return new ListNode(0);
         }
-
 
 
     }

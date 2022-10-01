@@ -12,7 +12,7 @@ public class Main {
         listNode.next = new ListNode(8);
         listNode.next.next = new ListNode(7);
         listNode.next.next.next = new ListNode(2);
-        listNode.next.next.next.next = listNode.next.next;
+        listNode.next.next.next.next = listNode;
 
         // 4 8 7 2 ->> null
         //   ^
@@ -53,8 +53,6 @@ public class Main {
         }
 
 
-
-
         if (current.next!= null && current.next.val == prev.val){
 
             return prev;
@@ -63,6 +61,7 @@ public class Main {
             System.out.println("null");
             return new ListNode(0);
         }
+
 
 
     }

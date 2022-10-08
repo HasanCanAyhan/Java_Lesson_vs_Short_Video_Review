@@ -1,4 +1,4 @@
-package mentor_lesson.week24;
+package algorithmQuestions;
 
 import java.util.Stack;
 

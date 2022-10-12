@@ -29,6 +29,8 @@ public class RomanToInteger {
 
         int result = map.get(s.charAt(s.length()-1)); // first ch of given string as int
 
+        // L  I   V   I    I     I
+
         for (int i = s.length()-2 ; i >= 0 ; i--) {
 
             if (map.get(s.charAt(i)) < map.get(s.charAt(i+1))){

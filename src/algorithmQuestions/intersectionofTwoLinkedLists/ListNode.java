@@ -1,4 +1,4 @@
-package mentor_lesson.week25.intersectionOfTwoLinkedLists;
+package algorithmQuestions.intersectionofTwoLinkedLists;
 
 public class ListNode {
     int val;

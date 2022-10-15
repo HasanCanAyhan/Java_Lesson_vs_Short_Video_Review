@@ -1,6 +1,7 @@
-package mentor_lesson.week25.intersectionOfTwoLinkedLists;
+package algorithmQuestions.intersectionofTwoLinkedLists;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 //https://youtu.be/c7dOI-hDa2Q
 

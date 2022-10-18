@@ -1,4 +1,4 @@
-package algorithmQuestions.ReverseLinkedList;
+package mentor_lesson.week26.palindromeLinkedList;
 
 public class MySinglyLinkedList {
     public ListNode head;

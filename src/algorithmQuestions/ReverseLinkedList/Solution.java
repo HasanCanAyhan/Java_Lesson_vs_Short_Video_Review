@@ -17,12 +17,12 @@ public class Solution {
    // current                         ^
    // nextN                                ^
 
-         Node prev = list.head;
-         Node current = list.head.next;
+         ListNode prev = list.head;
+         ListNode current = list.head.next;
 
          while (current != null){
 
-             Node holdingThirdNode = current.next;
+             ListNode holdingThirdNode = current.next;
              current.next = prev;
              prev = current;
              current = holdingThirdNode;

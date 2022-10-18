@@ -1,10 +1,10 @@
 package algorithmQuestions.ReverseLinkedList;
 
-public class Node {
+public class ListNode {
     int id;
-    Node next;
+    public ListNode next;
 
-    public Node(int id) {
+    public ListNode(int id) {
         this.id = id;
     }
 }

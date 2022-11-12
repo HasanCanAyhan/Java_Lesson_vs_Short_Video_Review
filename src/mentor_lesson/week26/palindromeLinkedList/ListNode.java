@@ -2,9 +2,10 @@ package mentor_lesson.week26.palindromeLinkedList;
 
 public class ListNode {
     int val;
-    public ListNode next;
+    ListNode next;
+    ListNode() {}
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 
-    public ListNode(int val) {
-        this.val = val;
-    }
+
 }

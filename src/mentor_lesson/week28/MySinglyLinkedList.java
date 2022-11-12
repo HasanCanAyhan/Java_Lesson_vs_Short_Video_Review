@@ -1,8 +1,8 @@
-package mentor_lesson.week26.palindromeLinkedList;
+package mentor_lesson.week28;
 
 public class MySinglyLinkedList {
-    public ListNode head;
-    ListNode tail;
+    Node head;
+    Node tail;
     int size;
 
     boolean isEmpty() {
@@ -11,7 +11,7 @@ public class MySinglyLinkedList {
 
   void addFirst(int data){
       // create a new node object from data
-      ListNode node=new ListNode(data);
+      Node node=new Node(data);
      // case 1: list empty
       if(isEmpty()){
        head=tail=node;
@@ -24,8 +24,8 @@ public class MySinglyLinkedList {
   }
   public int getKthItemFromLast(int k){
         // create two pointers
-        ListNode ptr1=head;
-        ListNode ptr2=head;
+        Node ptr1=head;
+        Node ptr2=head;
         // move ptr2 k-1 times
 
       for (int i = 0; i < k-1; i++) {
@@ -37,13 +37,13 @@ public class MySinglyLinkedList {
           ptr2=ptr2.next;
       }
       // ptr1 is on the kth element from the last
-      return ptr1.id;
+      return ptr1.val;
   }
     public void removeKthItemFromLast(int k){
         // create three pointers
-        ListNode ptr1=head;
-        ListNode ptr2=head;
-        ListNode prev=null;
+        Node ptr1=head;
+        Node ptr2=head;
+        Node prev=null;
         // move ptr2 k-1 times
 
         for (int i = 0; i < k-1; i++) {
@@ -74,7 +74,7 @@ public class MySinglyLinkedList {
     }
     void add(int data) {
         // create a new node object from data
-        ListNode node = new ListNode(data);
+        Node node = new Node(data);
 
         if (isEmpty()) { // if the list is empty
             head = tail = node;
@@ -91,10 +91,10 @@ public class MySinglyLinkedList {
         if(isEmpty()) System.out.println("List is empty!!!");
         // assign prev and current with the head
 
-        ListNode prev=head;
-        ListNode current=head;
+        Node prev=head;
+        Node current=head;
         while(current!=null){
-            if(current.id==id){// there is a match
+            if(current.val ==id){// there is a match
                 //case 1: head
                 if(current==head){
                     head=current.next;
@@ -124,20 +124,20 @@ public class MySinglyLinkedList {
         if (isEmpty()) return -1;
         int pos=0;
         // iterate through the list
-        ListNode current=head;// set my current with the starting element;
+        Node current=head;// set my current with the starting element;
         while(current!=null){
-            if(current.id==id) return pos;
+            if(current.val ==id) return pos;
             pos++;
             current=current.next;
         }
         return -1;
     }
     void printNodes(){
-        ListNode current=head;
+        Node current=head;
         while(current!=null){
-            if (current.next==null) System.out.println(current.id+"=> null");
+            if (current.next==null) System.out.println(current.val +"=> null");
             else {
-            System.out.print(current.id+"=> ");
+            System.out.print(current.val +"=> ");
             }
             current=current.next;
         }
@@ -145,8 +145,8 @@ public class MySinglyLinkedList {
 
 
     public void removeKthFromLast2(int k){
-        ListNode ptr1=head;
-        ListNode ptr2=head;
+        Node ptr1=head;
+        Node ptr2=head;
         for(int i=0;i<k-1;i++) {
 
             ptr2=ptr2.next;

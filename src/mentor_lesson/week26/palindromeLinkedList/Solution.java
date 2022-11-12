@@ -1,71 +1,82 @@
 package mentor_lesson.week26.palindromeLinkedList;
 
+import java.util.ArrayList;
+import java.util.List;
+
+//https://youtu.be/Ll9ZbXaXqlQ
+
 public class Solution {
-    public static void main(String[] args) {
-        MySinglyLinkedList list=new MySinglyLinkedList();
 
-        ListNode one = new ListNode(1);
-        ListNode two = new ListNode(2);
-        ListNode three = new ListNode(3);
-        ListNode four = new ListNode(4);
-        ListNode five = new ListNode(3);
-        ListNode six = new ListNode(2);
-        ListNode seven = new ListNode(1);
+    public boolean isPalindrome(ListNode head) {
 
-        list.head = one;
-        one.next = two;
-        two.next = three;
-        three.next = four;
-        four.next = five;
-        five.next = six;
-        six.next = seven;
+        // O(n)
 
+        if (head == null || head.next == null) return true; // if null or one element
+
+        List<Integer> list = new ArrayList<>();
+        while (head != null){
+            list.add(head.val);
+            head = head.next;
+        }
+
+        int start = 0;
+        int end = list.size()-1;
+
+        while (start < end){
+            if (list.get(start) != list.get(end)) return false;
+            start++;
+            end--;
+        }
+
+        return true;
 
     }
-     public static boolean isPalindrome(ListNode head) {
 
-         // 1 -> 2 -> 3 -> 4 -> 5 -> null
-   // prev                      ^
-   // current                         ^
-   // nextN                                ^
+    public boolean isPalindrome2(ListNode head){
 
-         ListNode start = head;
+        //O(1)
 
-         ListNode prev = head;
-         ListNode current = head.next;
+        //find mid
+        //reverse one of them
+        //compare both each other
 
-         while (current != null){
+        ListNode slow = head;
+        ListNode fast = head;
 
-             ListNode holdingThirdNode = current.next;
-             current.next = prev;
-             prev = current;
-             current = holdingThirdNode;
+        while (fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
 
-         }
+        if (fast != null) slow = slow.next;
 
-         ListNode tail = head;
-         head = prev;
-         tail.next = null;
+        ListNode revHead =  reverse(slow);
 
+        while (revHead != null){
+            if (revHead.val != head.val) return false;
+            revHead = revHead.next;
+            head = head.next;
+        }
 
-         while (start != null){
+        return true;
 
-             if (start.val != prev.val){
-                 return false;
-             }
-
-             prev = prev.next;
-             start = start.next;
-         }
-
-         return true;
+    }
 
 
-     }
+    private ListNode reverse(ListNode head) {
 
+        ListNode prev = null;
 
+        while (head != null ){
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;//prev becomes head
+            head = next;
+        }
 
+        return prev; // bcs prev is head
 
+    }
 
 
 }

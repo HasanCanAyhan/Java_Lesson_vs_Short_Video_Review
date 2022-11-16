@@ -32,48 +32,6 @@ public class MyTree {
         return list;
     }
 
-    void levelOrderTraversal(){
-        if(root==null) return;
-        Queue<TreeNode>  queue=new LinkedList<>();
-        queue.add(root);
-        int sum = 0;
-        while(!queue.isEmpty()){
-            TreeNode toVisit=queue.poll();
-            //poll:Retrieves and removes the head of this queue, or returns null if this queue is empty.
-            System.out.print(toVisit.val+", ");
-            if (toVisit.left!=null){
-                queue.add(toVisit.left);
-                sum += height(toVisit);
-            }
-
-
-            if (toVisit.right!=null) {
-                queue.add(toVisit.right);
-                sum += height(toVisit);
-            }
-
-        }
-
-        System.out.println("sum = " + sum);
-    }
-
-    int height(TreeNode root){
-
-        if (root == null) return -1;
-
-        if (isLeaf(root)) return 0;
-
-        return 1 + Math.max(height(root.left), height(root.right));
-
-    }
-
-    public boolean isLeaf(TreeNode node){
-        return node.left == null && node.right == null;
-    }
-
-
-
-
     public static void main(String[] args) {
 
         MyTree tree = new MyTree();
@@ -96,10 +54,8 @@ public class MyTree {
 
         System.out.println("-----------------------------------------");
 
-        System.out.println();
 
 
-        tree.levelOrderTraversal();
 
 
     }

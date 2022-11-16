@@ -12,6 +12,8 @@ public class ValidParentheses {
 
         System.out.println(longestValidParentheses(s));
 
+        System.out.println(validParentheses(s));
+
     }
 
 
@@ -35,6 +37,38 @@ public class ValidParentheses {
         return result;
 
 
+    }
+
+
+    public static int validParentheses(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+        ArrayList<Character> list = new ArrayList<>();
+
+        for (int i = 0; i < s.length(); i++) {
+
+            Character ch = s.charAt(i);
+
+            if (s.charAt(i) == '(') {
+                stack.push(s.charAt(i));
+                continue;
+            }
+            if (stack.isEmpty()) continue;
+
+            switch (ch) {
+                case ')':
+                    if (stack.peek() == '(') {
+                        list.add(stack.pop());
+                        list.add(ch);
+                    }
+                    break;
+            }
+
+
+        }
+
+        return list.size();
     }
 
 

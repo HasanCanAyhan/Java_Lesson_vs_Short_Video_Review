@@ -1,45 +1,42 @@
 package mentor_lesson.week30;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 public class ValidParentheses {
 
     public static void main(String[] args) {
 
-        String str = ")()())";
+        String s = ")()())";
 
-        String s = str.replace(" ", "");
+        System.out.println(longestValidParentheses(s));
 
-        Stack<Character> characters = new Stack<>();
+    }
 
-        if (s.isEmpty()) return;
 
-        for (char ch : s.toCharArray()) {
+    public static int longestValidParentheses(String s) {   //  ) ( ) ( ) )
 
-            if (ch != '('){
-                characters.push(ch);
-            }
-
+        if(s == null) {
+            return 0;
         }
-
-        int c = 1;
-        int i = 0;
-        while (!characters.isEmpty() && i <= s.length()-1) {
-
-            if (s.charAt(i) != ')') {
-                characters.pop();
-                c = 2 * c;
+        Stack<Integer> stack = new Stack();
+        int result = 0;
+        stack.push(-1);
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ')' && stack.size() > 1 &&
+                    s.charAt(stack.peek()) == '(') {
+                stack.pop();
+                result = Math.max(result, i - stack.peek());
+            } else {
+                stack.push(i);
             }
-
-            i++;
         }
-
-        System.out.println(c);
-
-
+        return result;
 
 
     }
+
 
 }
 /*

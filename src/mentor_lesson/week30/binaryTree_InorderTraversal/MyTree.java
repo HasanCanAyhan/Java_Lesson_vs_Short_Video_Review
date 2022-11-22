@@ -10,15 +10,15 @@ public class MyTree {
     }
 
     //left - root - right
-    public static List<Integer> inorderTraversal(TreeNode root) {
+    public static List<Integer> inorderTraversal(TreeNode root) { // using Stack
 
         Stack<TreeNode> stack = new Stack<>();
 
         List<Integer> list = new ArrayList<>();
 
-        while (!stack.isEmpty() || root != null){
+        while (!stack.isEmpty() || root != null) {
 
-            while (root != null){
+            while (root != null) {
                 stack.push(root);//3,5
                 root = root.left;
             }
@@ -30,6 +30,44 @@ public class MyTree {
         }
 
         return list;
+    }
+
+
+    public static void preOrderTraversal2(TreeNode root) {  // root, left, right
+
+        if (root == null) return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        TreeNode curr = root;
+        while (stack.size() > 0) {
+
+            curr = stack.pop();
+            System.out.print(curr.val + " -> ");
+            if (curr.right != null) {
+                stack.push(curr.right);
+            }
+
+            if (curr.left != null) {
+                stack.push(curr.left);
+
+            }
+
+
+        }
+
+
+    }
+
+
+
+    static void postOrder_withoutRecursive(TreeNode root) {
+
+
+
+
+
+
     }
 
     public static void main(String[] args) {
@@ -46,16 +84,20 @@ public class MyTree {
         tree.root.right.right = new TreeNode(7);
 
 
-
-
-
-
         System.out.println(inorderTraversal(tree.root));
 
         System.out.println("-----------------------------------------");
 
 
+        preOrderTraversal2(tree.root);
 
+        System.out.println();
+
+        System.out.println("-----------------------------------------");
+
+        System.out.println("postOrder-Traversal");
+        System.out.println();
+        postOrder_withoutRecursive(tree.root);
 
 
     }

@@ -255,6 +255,12 @@ public class BinarySearchTree {
 
     }
 
+    public int sumOfRange(TNode root, int low, int high){
+        if(root == null) return 0;
+        int num = 0;
+        if(root.value >= low && root.value <= high) num = root.value;
+        return num + sumOfRange(root.leftChild, low, high) + sumOfRange(root.rightChild, low, high);
+    }
 
     //week 31 - mentor - A_Q
     //Same Tree

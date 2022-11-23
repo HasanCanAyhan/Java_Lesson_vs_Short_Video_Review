@@ -1,4 +1,4 @@
-package mentor_lesson.week26.palindromeLinkedList;
+package mentor_lesson.week26.palindromeLinkedList_1;
 
 public class ListNode {
     int val;

@@ -61,11 +61,40 @@ public class MyTree {
 
 
 
-    static void postOrder_withoutRecursive(TreeNode root) {
+    static List<Integer> postOrder_withoutRecursive(TreeNode root) { // left right root
+
+        List<Integer> result = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+
+        TreeNode curr = root;
+
+        if (root == null) return result;
+
+        while (stack.size() > 0 || curr != null){
+
+            if (curr != null){
+                stack.push(curr);
+                curr = curr.left;
+            }else {
+                if (stack.peek().right == null){
+                    TreeNode temp = stack.pop();
+                    result.add(temp.val);
+                    while (!stack.isEmpty() && temp == stack.peek().right){
+                        temp = stack.pop();
+                        result.add(temp.val);
+                    }
+                }else {
+                    //no
+                    curr = stack.peek().right;
+                }
+            }
 
 
 
+        }
 
+
+        return result;
 
 
     }
@@ -97,7 +126,7 @@ public class MyTree {
 
         System.out.println("postOrder-Traversal");
         System.out.println();
-        postOrder_withoutRecursive(tree.root);
+        System.out.println(postOrder_withoutRecursive(tree.root));
 
 
     }

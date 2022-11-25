@@ -1,4 +1,4 @@
-package mentor_lesson.week28;
+package mentor_lesson.week28.deleteNNodesAfterMNodes_LinkedList;
 
 public class Node {
     int val;

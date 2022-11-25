@@ -11,8 +11,9 @@ public class LengthOfLastWord {
         - split() and trim() method will not be used
          */
 
-        String s = "  fly me  to  the moon "; //
-        System.out.println(lengthOfLastWord(s));
+        String s = "  fly me  to  the moon  "; //
+        //System.out.println(lengthOfLastWord(s));
+        System.out.println(lengthOfLastWord2(s));
 
     }
 
@@ -45,6 +46,26 @@ public class LengthOfLastWord {
         System.out.println(result);
         return result.length();
 
+
+    }
+
+    public static int lengthOfLastWord2(String s){
+
+        int p = s.length()-1;
+
+        while (s.charAt(p) == ' ' && p >= 0){
+
+            p--;
+        }
+
+
+        int length = 0;
+        while (p >= 0 && s.charAt(p) != ' '){
+            p--;
+            length++;
+        }
+
+        return length;
 
     }
 

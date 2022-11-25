@@ -7,8 +7,32 @@ public class QueueOperationsUsingStacks {
     Stack<Integer> stack1 = new Stack<>();
     Stack<Integer> stack2 = new Stack<>();
 
+
+
+    boolean isEmpty(){
+        return stack1.isEmpty() && stack2.isEmpty();
+    }
+
+
+
+
+
+
     void enqueue(int num){
         stack1.push(num);
+    }
+
+    int peek(){
+
+        if (stack2.isEmpty()){
+
+            while (!stack1.isEmpty()){
+                stack2.push(stack1.pop());
+            }
+
+        }
+
+        return stack2.peek();
     }
 
     int dequeue(){
@@ -16,19 +40,6 @@ public class QueueOperationsUsingStacks {
         return stack2.pop();
     }
 
-    boolean isEmpty(){
-        return stack1.isEmpty() && stack2.isEmpty();
-    }
-
-    int peek(){
-        if (stack2.isEmpty()){
-            while (!stack1.isEmpty()){
-                stack2.push(stack1.pop());
-            }
-        }
-
-        return stack2.peek();
-    }
 
     public static void main(String[] args) {
 

@@ -1,9 +1,10 @@
-package mentor_lesson.week32;
+package mentor_lesson.week32.lowestCommonAncestor;
 
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
+
+//https://youtu.be/13m9ZCB8gjw
+//https://youtu.be/_-QHfMDde90
 
 public class LowestCommonAncestor {
 
@@ -11,11 +12,6 @@ public class LowestCommonAncestor {
 
     public LowestCommonAncestor() {
     }
-
-
-
-
-
 
 
 
@@ -31,7 +27,7 @@ public class LowestCommonAncestor {
 
         while (!stack1.isEmpty() && curr != null){
 
-            if (curr.leftChild != null && curr.leftChild.value != p ){
+            if (curr.leftChild != null &&  curr.leftChild.value != p ){
                 if (curr.rightChild .value == p ){
                     curr = curr.rightChild;
                     stack1.push(curr.value);
@@ -84,7 +80,45 @@ public class LowestCommonAncestor {
 
 
 
+    } // hard coded
+
+
+    public TNode lowestCommonAncestor_recursive(TNode root, TNode p, TNode q){
+
+        if (root == null) return null;
+
+        if (root == p || root == q){
+            return root;
+        }
+
+
+        //Result
+        TNode leftNode = lowestCommonAncestor_recursive(root.leftChild, p, q);
+        TNode rightNode = lowestCommonAncestor_recursive(root.rightChild, p, q);
+
+        if (leftNode == null && rightNode == null) return null;
+        if (leftNode != null && rightNode != null) return root;
+
+        return (leftNode != null) ? leftNode : rightNode;
+
+
+
+
+        /*
+        if (leftNode == null){
+            return rightNode;
+        } else if (rightNode == null) {
+            return leftNode;
+        }else { // both left && right node are not null, give the root
+            return root;
+        }
+
+
+         */
     }
+
+
+
 
 
     public static void main(String[] args) {
@@ -103,6 +137,31 @@ public class LowestCommonAncestor {
 
         int i = tree.lowestCommonAncestor(tree.root, 5, 6);
         System.out.println("i = " + i);
+
+        System.out.println("------------------------");
+
+
+        LowestCommonAncestor tree1
+                = new LowestCommonAncestor();
+        TNode a = new TNode(1);
+        TNode b = new TNode(2);
+        TNode c = new TNode(3);
+        TNode d = new TNode(4);
+        TNode e = new TNode(5);
+        TNode f = new TNode(6);
+        TNode g = new TNode(7);
+
+        tree1.root = a;
+        tree.root.leftChild = b;
+        tree.root.rightChild = c;
+        tree.root.leftChild.leftChild = d;
+        tree.root.leftChild.rightChild = e;
+        tree.root.rightChild.leftChild = f;
+        tree.root.rightChild.rightChild = g;
+
+
+        TNode tNode = tree1.lowestCommonAncestor_recursive(tree.root, e, f);
+        System.out.println(tNode.value);
 
     }
 

@@ -1,4 +1,4 @@
-package mentor_lesson.week32;
+package mentor_lesson.week32.lowestCommonAncestor;
 
 public class VisualizeTree { // just to show tree
 

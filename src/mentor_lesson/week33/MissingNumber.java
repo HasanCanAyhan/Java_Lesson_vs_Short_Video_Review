@@ -11,39 +11,12 @@ public class MissingNumber {
         //int[] arr1 = {3,0,1}; //-->> 2
         int[] arr1 = {0,1};
         //int n = arr1.length;
-        //System.out.println(findMissingNumber(arr1,n));
 
-
-        System.out.println(findMissingNumber1(arr1));
+        System.out.println(findMissingNumber(arr1));
 
     }
 
-    public static int findMissingNumber(int[] arr, int n){
-
-        Arrays.sort(arr);
-
-        int[] arr2 = new int[n+1];
-
-        for (int i = 0; i < n+1 ; i++) {
-            arr2[i] = i;
-            if (i < arr.length){
-                if (arr2[i] != arr[i]){
-                    return i;
-                }
-            }else {
-                arr2[i] = i;
-                return i;
-            }
-
-
-        }
-
-        return -1;
-
-    }
-
-
-    public static int findMissingNumber1(int[] arr){
+    public static int findMissingNumber(int[] arr){
 
         int n = arr.length;
         int sum =  ( n * (n+1) )/ 2;

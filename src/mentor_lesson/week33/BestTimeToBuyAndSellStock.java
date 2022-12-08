@@ -42,4 +42,26 @@ public class BestTimeToBuyAndSellStock {
         return max;
     }
 
+    public int maxProfit(int[] prices ){
+        //initialize the minimum price to buy
+        int minBuy = prices[0];
+        //initialize the max profit
+        int profit = 0;
+        //Traverse all elements through a for loop
+        for (int i = 0; i < prices.length; i++) {
+
+            //get the minimum price to buy
+            minBuy = Math.max(minBuy, prices[i]);
+
+            // get the maximum profit
+            profit = Math.max(profit, prices[i] - minBuy);
+
+        }
+
+        return profit; // return the max profit
+
+
+    }
+
+
 }

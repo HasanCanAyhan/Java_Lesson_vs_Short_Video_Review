@@ -36,17 +36,14 @@ public class ReturnFrequencyOfWordsInGivenText {
 
         }
 
-
         String[] s = result.split(" ");
         System.out.println("s : "+Arrays.toString(s));
-
 
         System.out.println("---------------------");
 
         Map<String, Long> collect = Arrays.stream(s).collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
 
         collect.entrySet().removeIf(stringLongEntry -> stringLongEntry.getKey().isEmpty());
-
         System.out.println(collect);
 
 

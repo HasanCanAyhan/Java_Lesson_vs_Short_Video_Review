@@ -18,6 +18,9 @@ public class ReturnFrequencyOfWordsInGivenText {
 
         findFrequencyOfWords(str);
 
+
+        System.out.println(withStreamGetFreqOfWords(str));
+
     }
 
     public static void findFrequencyOfWords(String str){
@@ -49,5 +52,16 @@ public class ReturnFrequencyOfWordsInGivenText {
 
     }
 
+    public static Map<String,Long> withStreamGetFreqOfWords(String str){
+
+        if (str == null) return null;
+
+        return Arrays.stream(str.trim().toLowerCase().split("\\W+"))
+                //For using regex
+                //https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+                //https://regex101.com/
+                .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()));
+
+    }
 
 }
